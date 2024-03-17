@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class DataAnalyticsToolkit:
+    def __init__(self, data):
+        self.data = data
+        
+    def describe(self):
+        return self.data.describe()
+    
+    def plot_histogram(self, column):
+        plt.hist(self.data[column])
+        plt.title(f'Histogram of {column}')
+        plt.xlabel(column)
+        plt.ylabel('Frequency')
+        plt.show()
+    
+    def plot_scatter(self, x_column, y_column):
+        plt.scatter(self.data[x_column], self.data[y_column])
+        plt.title(f'Scatter Plot of {x_column} vs {y_column}')
+        plt.xlabel(x_column)
+        plt.ylabel(y_column)
+        plt.show()
